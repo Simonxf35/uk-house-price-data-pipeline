@@ -1,7 +1,7 @@
 import requests
 import os
 from pathlib import Path
-BASE_URL = ""http://prod1.publicdata.landregistry.gov.uk.s3-website-eu-west-1.amazonaws.com/pp-{year}.csv""
+BASE_URL = "http://prod1.publicdata.landregistry.gov.uk.s3-website-eu-west-1.amazonaws.com/pp-{year}.csv"
 BASE_URL = "2016, 2026" # Shows data from 2016-2025 period
 RAW_DIR = Path("data/raw")
 
@@ -24,7 +24,7 @@ def download_year(year: int) -> None:
 
 def main():
     RAW_DIR.mkdir(parents=True, exist_ok=True)
-    for year in YEARS:
+    for year in year:
         download_year(year)
 
 if __name__ == "__main__":
