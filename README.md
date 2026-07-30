@@ -28,7 +28,7 @@ Warehouse — Cleaned data modelled into a star schema for analytical querying.
 Serve — Data made available for dashboarding / visualisation.
 
 
-Tech stack
+ ## Tech stack
 
 
 Python — extraction and orchestration logic
@@ -38,11 +38,11 @@ Postgres (planned) — warehouse target for the modelled data
 pytest (planned) — data quality tests
 
 
-Project structure
+ ## Project structure
 
 uk-house-price-pipeline/
 ├── extract.py          # Downloads raw CSVs from HM Land Registry
-├── transform.py         # DuckDB cleaning and modelling logic
+├── transform.py         # DuckDB cleaning and modelling logic 
 ├── load.py               # Loads cleaned data into the warehouse
 ├── config.py             # URLs, file paths, year range constants
 ├── requirements.txt
@@ -52,7 +52,7 @@ uk-house-price-pipeline/
 └── tests/
     └── test_transform.py
 
-Getting started
+ ## Getting started
 
 bashgit clone https://github.com/Simonxf35/uk-house-price-data-pipeline.git
 cd uk-house-price-data-pipeline
@@ -60,7 +60,7 @@ pip install -r requirements.txt
 python extract.py
 python transform.py
 
-Data notes
+ ## Data notes
 
 
 Raw CSV files have no header row; column names are applied manually in code to
@@ -71,14 +71,14 @@ Category B transactions (repossessions, transfers, buy-to-lets) are only identif
 from October 2013 onward.
 
 
-Licence and attribution:
+ ## Licence and attribution:
 
 Contains HM Land Registry data © Crown copyright and database right 2026.
 This data is licensed under the Open Government Licence v3.0.
 
-Roadmap:
+ ## Roadmap
+- [x] Star schema warehouse implementation (DuckDB)
+- [ ] Data quality tests (row counts, null checks, duplicate detection)
+- [ ] Orchestration (Airflow or Prefect scheduled runs)
+- [ ] Dashboard / visualisation layer
 
- Star schema warehouse implementation (Postgres)
- Data quality tests (row counts, null checks, duplicate detection)
- Orchestration (Airflow or Prefect scheduled runs)
- Dashboard / visualisation layer
